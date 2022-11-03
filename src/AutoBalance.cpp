@@ -432,7 +432,7 @@ class AutoBalance_UnitScript : public UnitScript
         damage = _Modifer_DealDamage(target, attacker, damage);
     }
 
-    void ModifyHealRecieved(Unit* target, Unit* attacker, uint32& damage) override {
+    void ModifyHealReceived(Unit* target, Unit* attacker, uint32& damage, SpellInfo const* /*spellInfo*/) override {
         // We check this here because spell effects such as "full heal" need to work for
         // some encounters (Ingvar, for example)
         if (damage < target->GetMaxHealth()) {
